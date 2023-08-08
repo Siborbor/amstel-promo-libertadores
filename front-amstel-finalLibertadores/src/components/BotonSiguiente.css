@@ -1,0 +1,26 @@
+.botonSiguiente {
+    background-color: #ffffff00;
+    color: #D60000;
+    margin: 10px auto;
+    font-size: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    font-family: "BebasNeueBold";
+    transition: 300ms;
+  }
+  
+  .botonSiguiente p {
+    margin: 0px;
+  }
+  
+  .botonSiguiente:hover {
+    gap: 10px;
+    transition: 300ms;
+  }
+  
+  .flechaRoja {
+    width: 10px;
+  }

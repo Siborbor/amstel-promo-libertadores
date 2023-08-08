@@ -1,11 +1,14 @@
 @font-face {
-  font-family: 'Bebas-Regular';
-  src: url('fonts/BebasRegular.eot');
-  src: url('fonts/BebasRegular.eot') format('embedded-opentype'),
-       url('fonts/BebasRegular.woff2') format('woff2'),
-       url('fonts/BebasRegular.woff') format('woff'),
-       url('fonts/BebasRegular.ttf') format('truetype'),
-       url('fonts/BebasRegular.svg#BebasRegular') format('svg');
+  font-family: "BebasNeueBold";
+  src: local("BebasNeueBold"),
+    url("./fonts/bebas-neue/BebasNeueBold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "BebasNeueRegular";
+  src: local("BebasNeueRegular"),
+    url("./fonts/bebas-neue/BebasNeueRegular.ttf") format("truetype");
 }
 
 body {
@@ -20,7 +23,6 @@ body {
   background-repeat: none;
   position: relative;
 }
-
 
 .contenido {
   display: flex;
