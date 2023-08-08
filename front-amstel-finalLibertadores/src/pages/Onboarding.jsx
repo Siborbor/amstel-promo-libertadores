@@ -3,8 +3,24 @@ import Riodejaneiro from "../assets/imagenes/riodejaneiro_font.svg";
 import IncluyeViaje from "../assets/imagenes/incluye_viaje.svg";
 import Patrocinadores from "../assets/imagenes/logos_auspiciantes.svg";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import "./Onboarding.css";
+import { useNavigate } from "react-router-dom";
 const Onboarding = () => {
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    let interval= setInterval(() => {
+      navigate("/step1");
+    }, 3000);
+  
+    return () => {
+      clearInterval(interval);
+    }
+  },[])
+  
+
   return (
     <>
       <div className="contenido onborading">
