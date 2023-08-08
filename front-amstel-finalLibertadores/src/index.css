@@ -1,5 +1,32 @@
-body {
-  margin: 0;
-  height: 100dvh;
+@font-face {
+  font-family: 'Bebas-Regular';
+  src: url('fonts/BebasRegular.eot');
+  src: url('fonts/BebasRegular.eot') format('embedded-opentype'),
+       url('fonts/BebasRegular.woff2') format('woff2'),
+       url('fonts/BebasRegular.woff') format('woff'),
+       url('fonts/BebasRegular.ttf') format('truetype'),
+       url('fonts/BebasRegular.svg#BebasRegular') format('svg');
 }
 
+body {
+  margin: 0;
+  display: flex;
+  box-sizing: content-box;
+  overflow: hidden;
+  height: 100vh;
+  background-image: url("./assets/imagenes/background-desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-left: 9vw;
+  gap: 30px;
+}

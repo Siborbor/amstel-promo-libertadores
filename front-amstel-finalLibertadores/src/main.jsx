@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Onboarding from "./pages/onboarding";
+import Onboarding from "./pages/Onboarding";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 let router = createBrowserRouter([{ path: "/", element: <Onboarding /> }]);
