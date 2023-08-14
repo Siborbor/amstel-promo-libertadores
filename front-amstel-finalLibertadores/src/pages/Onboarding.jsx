@@ -7,19 +7,19 @@ import { useEffect } from "react";
 import "./Onboarding.css";
 import { useNavigate } from "react-router-dom";
 const Onboarding = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    let interval= setInterval(() => {
-      navigate("/step1");
-    }, 3000);
-  
+    let interval = setInterval(() => {
+      navigate("/step1", {
+        replace: true,
+      });
+    }, 4500);
+
     return () => {
       clearInterval(interval);
-    }
-  },[])
-  
+    };
+  }, []);
 
   return (
     <>
@@ -28,17 +28,17 @@ const Onboarding = () => {
           className="encabezado"
           src={Encabezado}
           alt="encabezado"
-          initial={{ opacity: 0, y:-40  }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.8, delay:0.2 }}
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         />
         <motion.img
           className="riodejaneiro"
           src={Riodejaneiro}
           alt="palabra_riodejaneiro"
-          initial={{ opacity: 0, y:-40  }}
-          animate={{ opacity: 1, y:0 }}
-          transition={{ duration: 0.8, delay:0.5 }}
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         />
         <motion.img
           className="incluyeViaje"
@@ -46,7 +46,7 @@ const Onboarding = () => {
           alt="logos de lo que incluye viaje"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay:0.7 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
         />
         <motion.img
           className="patrocinadores"
@@ -54,7 +54,7 @@ const Onboarding = () => {
           alt="logos de patrocinadores"
           initial={{ opacity: 0, scale: 0.2 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay:1 }}
+          transition={{ duration: 0.8, delay: 1 }}
         />
       </div>
     </>

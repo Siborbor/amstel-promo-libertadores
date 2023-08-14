@@ -92,7 +92,7 @@ const FormYear = ({ handleDate }) => {
         className="titulo_selector_Edad"
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, delay:0.2}}
+        transition={{ duration: 0.7, delay: 0.2 }}
       >
         PARA CONTINUAR CON LA EXPERIENCIA
         <br /> DEBES CONFIRMAR TU MAYORÍA DE EDAD
@@ -100,7 +100,7 @@ const FormYear = ({ handleDate }) => {
       <motion.div
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, delay:0.4 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
         className="contenedorDateSelect"
       >
         <select onChange={handleChangeDias} defaultValue="option1">

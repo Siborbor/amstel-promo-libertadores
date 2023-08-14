@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import "./StepOne.css";
 import FormYear from "../components/FormYear";
 import BotonSiguiente from "../components/BotonSiguiente";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
+import { useNavigate } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -17,7 +18,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     borderRadius: "20px",
     padding: "30px",
-    transition: "300ms"
+    transition: "300ms",
   },
 };
 
@@ -26,7 +27,7 @@ const StepOne = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [textModal, setTexModal] = useState("");
   const [edad, setEdad] = useState(" ");
-  
+  const navigate = useNavigate();
 
   const handleDate = (date) => {
     setDate(date);
@@ -43,57 +44,53 @@ const StepOne = () => {
 
   const calcularEdad = (fechaNacimiento) => {
     const hoy = new Date();
-    const partesFecha = fechaNacimiento.split('/');
-  
+    const partesFecha = fechaNacimiento.split("/");
+
     if (partesFecha.length !== 3) {
       return;
     }
-  
+
     const anoNacimiento = parseInt(partesFecha[0]);
     const mesNacimiento = parseInt(partesFecha[1]) - 1;
     const diaNacimiento = parseInt(partesFecha[2]);
-  
+
     if (isNaN(anoNacimiento) || isNaN(mesNacimiento) || isNaN(diaNacimiento)) {
       return;
     }
-  
+
     const cumpleanos = new Date(anoNacimiento, mesNacimiento, diaNacimiento);
-  
+
     if (isNaN(cumpleanos)) {
       return;
     }
-  
+
     const edad = hoy.getFullYear() - cumpleanos.getFullYear();
     const m = hoy.getMonth() - cumpleanos.getMonth();
-  
+
     if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
       return edad - 1;
     }
-  
+
     return edad;
   };
 
   const buttonPress = () => {
-    console.log(date)
+    console.log(date);
     console.log(edad);
-     if (edad !== undefined) {
-       if (edad < 18) {
-         setTexModal("No tienes la edad suficiente para ver este contenido");
-         openModal();
-       } else if (edad > 17) {
-        console.log("eres mayor de edad");
-        //   navigate("/IngresoDatos", {
-        //     state: { fechaNacimiento: date },
-        //     replace: true,
-        //   });
-       }
-     } else {
-       setTexModal("Ingrese la Fecha de Su Nacimiento");
-       openModal();
-     }
+    if (edad !== undefined) {
+      if (edad < 18) {
+        setTexModal("No tienes la edad suficiente para ver este contenido");
+        openModal();
+      } else if (edad > 17) {
+        navigate("/step2", {
+          state: { fechaNacimiento: date }
+        });
+      }
+    } else {
+      setTexModal("Ingrese la Fecha de Su Nacimiento");
+      openModal();
+    }
   };
-
-  
 
   return (
     <>
