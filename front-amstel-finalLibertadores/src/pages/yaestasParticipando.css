@@ -1,0 +1,21 @@
+
+.codigoRegistrado img{
+  width: 400px;
+}
+
+.boton_subir_otro_codigo{
+background-color: #D60000;
+  color: white;
+  margin: 35px auto;
+  border-radius: 25px;
+  font-size: 25px;
+  padding: 12px 22px;
+  border: none;
+  font-family: "BebasNeueBold";
+  transition: 300ms;
+}
+
+.boton_subir_otro_codigo:hover {
+  transition: 300ms;
+  padding: 12px 30px;
+  }

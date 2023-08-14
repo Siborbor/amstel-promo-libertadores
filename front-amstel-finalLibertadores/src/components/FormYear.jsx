@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./formYear.css";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const FormYear = ({ handleDate }) => {
   const [date, setDate] = useState("");

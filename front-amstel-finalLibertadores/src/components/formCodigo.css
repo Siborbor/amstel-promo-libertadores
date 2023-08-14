@@ -1,0 +1,98 @@
+.contenedorFormularioCodigo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "BebasNeueRegular";
+}
+
+.contenedorFormularioCodigo input {
+  background-color: #eb1c24;
+  color: white;
+  padding: 10px 0px 10px 20px;
+  width: 200px;
+  border-radius:100px;
+  border: none;
+  text-align: start;
+  font-family: "BebasNeueBold";
+  font-size: 18px;
+}
+
+
+
+.contenedorFormularioCodigo  input::placeholder {
+  color: white;
+  font-size: 18px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="file"] {
+    -moz-appearance: textfield;
+}
+
+.contenedorFormularioCodigo  .custom-input-file {
+    background-color: #eb1c24;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0px 10px 20px;
+    width: 18vw;
+    font-family: "BebasNeueBold";
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .contenedorFormularioCodigo .custom-input-file .input-file {
+   border: 10000px solid transparent;
+   cursor: pointer;
+   font-size: 10000px;
+   margin: 0;
+   opacity: 0;
+   outline: 0 none;
+   padding: 0;
+   position: absolute;
+   right: -1000px;
+   top: -1000px;
+  }
+
+  .botonEnviar {
+    background-color: #eb1c24;
+    color: white;
+    margin: 0px auto;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 7px 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    font-family: "BebasNeueBold";
+    justify-content: space-evenly;
+    transition: 300ms;
+  }
+
+  .botonEnviar img{
+    transition: 300ms;
+  }
+  
+  .botonEnviar p {
+    margin:0px;
+  }
+  
+  .botonEnviar:hover img{
+    margin-left: 5px;
+    transition: 300ms;
+  }
+  

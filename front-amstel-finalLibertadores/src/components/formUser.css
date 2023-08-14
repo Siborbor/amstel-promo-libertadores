@@ -1,0 +1,114 @@
+.contenedorFormulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vw;
+  font-family: "BebasNeueRegular";
+}
+
+.contenedorFormulario input {
+  background-color: white;
+  color: #d60000;
+  padding: 5px 0px 3px 20px;
+  width: 350px;
+  border-radius: 15px;
+  border: none;
+  text-align: start;
+  font-family: "BebasNeueBold";
+  font-size: 18px;
+  border: 3px solid #d60000 ;
+}
+
+input::placeholder {
+  color: #d60000;
+  font-size: 18px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.camposrequeridos {
+  font-family: "BebasNeueBold";
+  text-align: end;
+  padding-right: 10px;
+  margin: 0px;
+}
+.errormensaje {
+  padding-left: 17px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+input:-internal-autofill-selected {
+  background-color: #d60000 !important;
+}
+
+.contenedorTerminosycondiciones #checkbox {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  border-radius: 4px;
+  padding: 0;
+  flex-shrink: 0;
+  border-width: 1px;
+  user-select: none;
+  background-color: white;
+  border: 3px solid #d60000;
+  transition:300ms;
+}
+
+.contenedorTerminosycondiciones #checkbox:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  transition:300ms;
+  background-color: #d60000;
+}
+
+.contenedorTerminosycondiciones p{
+  margin: 0px;
+}
+
+.contenedorTerminos {
+  display: flex;
+  align-items: center;
+  width: 230px;
+  margin: 0 auto;
+}
+
+.linkterminos,
+.acepto {
+  font-size: 1rem;
+}
+
+.linkterminos {
+  font-weight: 800;
+  cursor: pointer;
+  color: #d60000;
+  text-decoration: underline;
+}
+
+.contenedorTerminosycondiciones {
+  display: flex;
+  align-items: center;
+}
+
+.contenedorTextTerminos {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.textModal {
+  font-family: "BebasNeueRegular";
+}

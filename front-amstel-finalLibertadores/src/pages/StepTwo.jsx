@@ -1,6 +1,7 @@
 import React from "react";
 import Encabezado from "../assets/imagenes/ingresa_tus_datos.svg";
 import { motion } from "framer-motion";
+import FormUser from "../components/FormUser"
 const StepTwo = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const StepTwo = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         />
+        <FormUser/>
       </div>
     </>
   );

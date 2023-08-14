@@ -1,0 +1,13 @@
+.step3 .encabezado{
+    width: 250px;
+}
+
+.step3 .titulo_formCodigo{
+    font-family: 'BebasNeueRegular';
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin: 0px;
+    color:#2D2D2D;
+    margin-bottom: 10px;
+    text-align: center;
+}
