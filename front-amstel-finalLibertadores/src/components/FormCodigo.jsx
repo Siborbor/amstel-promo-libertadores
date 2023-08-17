@@ -7,48 +7,46 @@ import FlechaRoja from "../assets/imagenes/flecha_blanca.svg";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
 
-const FormCodigo = () => {
+const FormCodigo = ({ data }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [textModal, setTexModal] = useState("");
 
-  const buttonPress = (values) => {
-    if (values.codigo) {
-      navigate("/codigoRegistrado");
-      // //consulta
-      // let datos = JSON.stringify(values, null, 2);
-      // var myHeaders = new Headers();
-      // myHeaders.append("Content-Type", "application/json");
-      // var raw = datos;
-      // var requestOptions = {
-      //   method: "POST",
-      //   headers: myHeaders,
-      //   body: raw,
-      //   redirect: "follow",
-      // };
-      // fetch("https://amstel-backend-production.up.railway.app/api", requestOptions)
-      //   .then((response) => response.text())
-      //   .then((data) => {
-      //     const resultado = JSON.parse(data);
-      //     if (resultado.codigo === 200) {
-      //       navigate("/yaestasparticipando", {
-      //         state: {
-      //           nombre: values.nombre,
-      //           cedula: values.cedula,
-      //           telefono: values.telefono,
-      //           email: values.email,
-      //           ciudad: values.ciudad,
-      //         },
-      //       });
-      //     } else {
-      //       openModal();
-      //       setTexModal("Código Incorrecto");
-      //     }
-      //   })
-      //   .catch((error) => console.log("error", error));
-    }
-  };
+  // const buttonPress = (values) => {
+  //     // //consulta
+  //     // let datos = JSON.stringify(values, null, 2);
+  //     // var myHeaders = new Headers();
+  //     // myHeaders.append("Content-Type", "application/json");
+  //     // var raw = datos;
+  //     // var requestOptions = {
+  //     //   method: "POST",
+  //     //   headers: myHeaders,
+  //     //   body: raw,
+  //     //   redirect: "follow",
+  //     // };
+  //     // fetch("https://amstel-backend-production.up.railway.app/api", requestOptions)
+  //     //   .then((response) => response.text())
+  //     //   .then((data) => {
+  //     //     const resultado = JSON.parse(data);
+  //     //     if (resultado.codigo === 200) {
+  //     //       navigate("/yaestasparticipando", {
+  //     //         state: {
+  //     //           nombre: values.nombre,
+  //     //           cedula: values.cedula,
+  //     //           telefono: values.telefono,
+  //     //           email: values.email,
+  //     //           ciudad: values.ciudad,
+  //     //         },
+  //     //       });
+  //     //     } else {
+  //     //       openModal();
+  //     //       setTexModal("Código Incorrecto");
+  //     //     }
+  //     //   })
+  //     //   .catch((error) => console.log("error", error));
+  //   }
+  // };
 
   function openModal() {
     setIsOpen(true);
@@ -62,11 +60,15 @@ const FormCodigo = () => {
     <div>
       <Formik
         initialValues={{
-          // nombre: location.state.nombre,
-          // cedula: location.state.cedula,
-          // telefono: location.state.telefono,
-          // email: location.state.email,
-          // ciudad: location.state.ciudad,
+          nombre: data.nombre,
+          cedula: data.cedula,
+          telefono: data.telefono,
+          email: data.email,
+          ciudad: data.ciudad,
+          fechaNacimiento: data.fechaNacimiento,
+          usuarioInstagram: data.usuarioInstagram,
+          seguirInstagram: data.seguirInstagram,
+          terminosycondiciones: data.terminosycondiciones,
           codigo: "",
         }}
         validate={(values) => {
@@ -80,9 +82,22 @@ const FormCodigo = () => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 400);
+          navigate("/codigoRegistrado", {
+            state: {
+              nombre: values.nombre,
+              cedula: values.cedula,
+              telefono: values.telefono,
+              email: values.email,
+              ciudad: values.ciudad,
+              fechaNacimiento: values.fechaNacimiento,
+              usuarioInstagram: values.usuarioInstagram,
+              seguirInstagram: values.seguirInstagram,
+              terminosycondiciones: values.terminosycondiciones,
+            },
+          });
         }}
       >
         {({
@@ -132,7 +147,6 @@ const FormCodigo = () => {
               type="submit"
               className="botonEnviar"
               disabled={isSubmitting}
-              onClick={() => buttonPress(values)}
             >
               Enviar <img src={FlechaRoja} className="flechaRoja" />
             </motion.button>

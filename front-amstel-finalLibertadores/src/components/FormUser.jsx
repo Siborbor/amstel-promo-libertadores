@@ -6,7 +6,7 @@ import Modal from "react-modal";
 import FlechaRoja from "../assets/imagenes/flecha-roja.jpg";
 import { motion } from "framer-motion";
 
-const FormUser = () => {
+const FormUser = ({ fechaNacimiento }) => {
   const navigate = useNavigate();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [textModal, setTexModal] = useState("");
@@ -28,9 +28,10 @@ const FormUser = () => {
           telefono: "",
           email: "",
           ciudad: "",
+          fechaNacimiento: fechaNacimiento,
           usuarioInstagram: "",
-          seguirInstagram: "",
-          Terminosycondiciones: "",
+          seguirInstagram: false,
+          terminosycondiciones: false,
         }}
         validate={(values) => {
           const errors = {};
@@ -69,17 +70,26 @@ const FormUser = () => {
           if (!values.seguirInstagram) {
             errors.seguirInstagram = "Debes seguir a amstel en Instagram*";
           }
-          if (!values.Terminosycondiciones) {
-            errors.Terminosycondiciones =
+          if (!values.terminosycondiciones) {
+            errors.terminosycondiciones =
               "Debes aceptar los Términos y condiciones*";
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values) => {
+          navigate("/step3", {
+            state: {
+              nombre: values.nombre,
+              cedula: values.cedula,
+              telefono: values.telefono,
+              email: values.email,
+              ciudad: values.ciudad,
+              fechaNacimiento: values.fechaNacimiento,
+              usuarioInstagram: values.usuarioInstagram,
+              seguirInstagram: values.seguirInstagram,
+              terminosycondiciones: values.terminosycondiciones,
+            },
+          });
         }}
       >
         {({
@@ -121,7 +131,7 @@ const FormUser = () => {
               {errors.cedula && touched.cedula && errors.cedula}
             </p>
             <motion.input
-              type="telefono"
+              type="text"
               name="telefono"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -149,7 +159,7 @@ const FormUser = () => {
               {errors.email && touched.email && errors.email}
             </p>
             <motion.input
-              type="ciudad"
+              type="text"
               name="ciudad"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -163,7 +173,7 @@ const FormUser = () => {
               {errors.ciudad && touched.ciudad && errors.ciudad}
             </p>
             <motion.input
-              type="usuarioInstagram"
+              type="text"
               name="usuarioInstagram"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -191,7 +201,7 @@ const FormUser = () => {
                     name="seguirInstagram"
                     onChange={handleChange}
                     id="checkbox"
-                    value="seguirInstagram"
+                    value={values.seguirInstagram}
                   ></input>
                 </label>
                 <div className="contenedorTextTerminos">
@@ -216,10 +226,10 @@ const FormUser = () => {
                 <label>
                   <input
                     type="checkbox"
-                    name="Terminosycondiciones"
+                    name="terminosycondiciones"
                     onChange={handleChange}
                     id="checkbox"
-                    value="Terminosycondiciones"
+                    value={values.terminosycondiciones}
                   ></input>
                 </label>
                 <div className="contenedorTextTerminos">
@@ -231,36 +241,13 @@ const FormUser = () => {
               </div>
             </motion.div>
             <motion.button
+              type="submit"
+              className="botonSiguiente"
+              disabled={isSubmitting}
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.9 }}
-              className="botonSiguiente"
-              disabled={isSubmitting}
-              onClick={() =>
-                values.nombre !== "" &&
-                values.cedula !== "" &&
-                values.cedula.length === 10 &&
-                values.telefono !== "" &&
-                values.telefono.length === 10 &&
-                values.email !== "" &&
-                values.ciudad !== "" &&
-                values.seguirInstagram !== "" &&
-                values.Terminosycondiciones !== ""
-                  ? navigate(
-                      "/step3"
-                      // {
-                      //   state: {
-                      //     nombre: values.nombre,
-                      //     cedula: values.cedula,
-                      //     telefono: values.telefono,
-                      //     email: values.email,
-                      //     ciudad: values.ciudad,
-                      //   },
-                      // },
-                      // { require: true }
-                    )
-                  : console.log("ingreso no hecho")
-              }
+              onClick={() => console.log(fechaNacimiento)}
             >
               SIGUIENTE <img src={FlechaRoja} className="flechaRoja" />
             </motion.button>

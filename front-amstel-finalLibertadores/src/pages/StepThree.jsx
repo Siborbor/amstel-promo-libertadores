@@ -1,10 +1,20 @@
-import React from "react";
+import { useEffect } from "react";
 import Lata from "../assets/imagenes/lata_atras.png";
 import "./StepThree.css";
 import FormCodigo from "../components/FormCodigo";
 import { motion } from "framer-motion";
+import { useLocation, redirect, useNavigate } from "react-router-dom";
 
 const StepThree = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state == null) {
+      navigate("/");
+    }
+  }, []);
+
   return (
     <>
       <div className="contenido step3">
@@ -24,7 +34,7 @@ const StepThree = () => {
           Ingresa el código alfanumérico <br /> que viene debajo de tu lata de
           Amstel
         </motion.h2>
-        <FormCodigo />
+        <FormCodigo data = {location.state}/>
       </div>
     </>
   );

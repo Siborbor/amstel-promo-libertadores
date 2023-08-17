@@ -23,13 +23,17 @@ const YaEstasParticipando = () => {
         className="boton_subir_otro_codigo"
         onClick={() =>
           navigate("/step3", {
-            // state: {
-            //   nombre: location.state.nombre,
-            //   cedula: location.state.cedula,
-            //   telefono: location.state.telefono,
-            //   email: location.state.email,
-            //   ciudad: location.state.ciudad,
-            // },
+            state: {
+              nombre: location.state.nombre,
+              cedula: location.state.cedula,
+              telefono: location.state.telefono,
+              email: location.state.email,
+              ciudad: location.state.ciudad,
+              fechaNacimiento: location.state.fechaNacimiento,
+              usuarioInstagram: location.state.usuarioInstagram,
+              seguirInstagram: location.state.seguirInstagram,
+              terminosycondiciones: location.state.terminosycondiciones,
+             },
           })
         }
       >
