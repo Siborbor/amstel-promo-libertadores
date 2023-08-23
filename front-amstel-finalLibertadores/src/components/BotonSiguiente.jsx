@@ -1,5 +1,5 @@
 import React from 'react'
-import FlechaRoja from "../assets/imagenes/flecha-roja.jpg";
+import FlechaRoja from "../assets/imagenes/flecha_roja.svg";
 import "./BotonSiguiente.css"
 import { motion } from 'framer-motion';
 

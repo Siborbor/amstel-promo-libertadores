@@ -3,7 +3,7 @@ import Lata from "../assets/imagenes/lata_atras.png";
 import "./StepThree.css";
 import FormCodigo from "../components/FormCodigo";
 import { motion } from "framer-motion";
-import { useLocation, redirect, useNavigate } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 const StepThree = () => {
   const location = useLocation();

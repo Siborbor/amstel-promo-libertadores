@@ -1,6 +1,7 @@
 import Encabezado from "../assets/imagenes/encabezado_onborading.svg";
 import Riodejaneiro from "../assets/imagenes/riodejaneiro_font.svg";
 import IncluyeViaje from "../assets/imagenes/incluye_viaje.svg";
+import IncluyeViaje_mobile from "../assets/imagenes/incluye_viaje_mobile.svg";
 import Patrocinadores from "../assets/imagenes/logos_auspiciantes.svg";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
@@ -9,17 +10,17 @@ import { useNavigate } from "react-router-dom";
 const Onboarding = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    let interval = setInterval(() => {
-      navigate("/step1", {
-        replace: true,
-      });
-    }, 4500);
+   useEffect(() => {
+     let interval = setInterval(() => {
+       navigate("/step1", {
+         replace: true,
+       });
+     }, 4500);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+     return () => {
+       clearInterval(interval);
+     };
+   }, []);
 
   return (
     <>
@@ -43,6 +44,14 @@ const Onboarding = () => {
         <motion.img
           className="incluyeViaje"
           src={IncluyeViaje}
+          alt="logos de lo que incluye viaje"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        />
+        <motion.img
+          className="incluyeViaje_mobile"
+          src={IncluyeViaje_mobile}
           alt="logos de lo que incluye viaje"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}

@@ -24,3 +24,22 @@
   .flechaRoja {
     width: 10px;
   }
+
+  @media (max-width: 750px) {
+    .botonSiguiente {
+      color: #fff;
+      margin: 5px auto;
+      font-size: 18px;
+      gap: 5px;
+    }
+      
+    .botonSiguiente:hover {
+      gap: 10px;
+      transition: 300ms;
+    }
+    
+    .flechaRoja {
+      width: 10px;
+    }
+  
+  }

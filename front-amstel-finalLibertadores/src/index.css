@@ -33,3 +33,17 @@ body {
   margin-left: 9vw;
   gap: 30px;
 }
+
+@media (max-width: 750px) {
+  body{
+    background-image: url("./assets/imagenes/background-mobile.jpg");
+  }
+
+  .contenido {
+    height: 50vh;
+    width: 100vw;
+    margin-left: 0px;
+    gap: 15px;
+    margin-top: 30px;
+  }
+}

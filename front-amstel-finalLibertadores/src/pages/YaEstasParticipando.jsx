@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import EstasParticipando from "../assets/imagenes/ya_estas_participando.svg";
 import "./yaestasParticipando.css";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 const YaEstasParticipando = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    console.log(location.state) 
+  }, [])
+  
+
   return (
     <div className="contenido codigoRegistrado">
       <motion.img

@@ -6,3 +6,23 @@
   padding-top: 30px;
 }
 
+.onborading .incluyeViaje_mobile {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .onborading .incluyeViaje {
+    display: none;
+  }
+
+  .onborading .encabezado, .onborading .riodejaneiro {
+    width: 65vw;
+  }
+  .onborading .incluyeViaje_mobile {
+    display: block;
+    width: 50vw;
+  }
+  .onborading .patrocinadores {
+   display: none;
+  }
+}
