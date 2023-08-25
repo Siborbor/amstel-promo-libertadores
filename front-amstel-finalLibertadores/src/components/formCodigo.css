@@ -96,3 +96,25 @@ input[type="file"] {
     transition: 300ms;
   }
   
+  @media (max-width: 750px) {
+    .contenedorFormularioCodigo input {
+      background-color: white;
+      color: #eb1c24;
+      width: 160px;
+    }
+    .contenedorFormularioCodigo  input::placeholder {
+      color: #eb1c24;
+    }
+    .botonEnviar {
+      background-color: white;
+      color:  #eb1c24;
+    }
+    .flechaRoja{
+      width: 8px;
+    }
+
+    .botonModal{
+      font-size: 15px;
+      width: auto;
+    }
+  }

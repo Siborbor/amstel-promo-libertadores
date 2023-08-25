@@ -34,14 +34,22 @@ body {
   gap: 30px;
 }
 
+.TextoR{
+  position: absolute;
+  width: 9px;
+  top: 10vh;
+  right: 4px;
+}
+
 @media (max-width: 750px) {
   body{
-    background-image: url("./assets/imagenes/background-mobile.jpg");
+    background-image: url("./assets/imagenes/background-mobile.png");
+    height: 100dvh;
   }
 
   .contenido {
     height: 50vh;
-    width: 100vw;
+    width: 100dvw;
     margin-left: 0px;
     gap: 15px;
     margin-top: 30px;

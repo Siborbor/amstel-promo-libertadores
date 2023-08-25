@@ -24,22 +24,28 @@
   .flechaRoja {
     width: 10px;
   }
-
+  .botonSiguienteMobile{
+    display: none;
+  }
+  
   @media (max-width: 750px) {
     .botonSiguiente {
-      color: #fff;
-      margin: 5px auto;
-      font-size: 18px;
-      gap: 5px;
+      display: none;
     }
-      
-    .botonSiguiente:hover {
-      gap: 10px;
-      transition: 300ms;
-    }
-    
     .flechaRoja {
       width: 10px;
     }
-  
+    .botonSiguienteMobile{
+      background-color: #ffffff00;
+      color: #fff;
+      margin: 10px auto;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      border: none;
+      font-family: "BebasNeueBold";
+      transition: 300ms;
+    }
   }

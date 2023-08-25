@@ -53,7 +53,7 @@
   text-align: center;
 }
 
-.tituloModal{
+.tituloModal {
   font-family: "BebasNeueBold";
 }
 
@@ -96,15 +96,14 @@
   user-select: none;
   background-color: #d6000017;
   border: 3px solid #d60000;
-  transition:300ms;
+  transition: 300ms;
 }
 
 .checkbox:checked {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-  transition:300ms;
+  transition: 300ms;
   background-color: #d60000;
 }
-
 
 .contenedormodalerror {
   text-align: center;
@@ -115,26 +114,27 @@
     background-color: white;
     color: #d60000;
     font-size: 13px;
-    padding: 4px 7px;
+    padding: 6px 10px;
   }
-    
+
   .contenedorCheckbox {
     padding-top: 20px;
     font-family: "BebasNeueBold";
     font-size: 14px;
     color: white;
   }
-  
+
   .checkbox {
     border: 3px solid #fff;
+    width: 25px;
+    height: 25px;
   }
-  
+
   .checkbox:checked {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='red' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
     background-color: #fff;
   }
-  
-  
+
   .contenedormodalerror {
     text-align: center;
   }

@@ -4,11 +4,12 @@
 
 @media (max-width: 750px) {
     .step1 .riodejaneiro, .step1 .encabezado {
-        width: 65vw;
+        width: 60vw;
     }
     .step1 .titulo_selector_Edad{
         font-size: 14px;
-        margin-top: 0px;
+        margin-top: 10px;
         color: white;
+        
     }
   }

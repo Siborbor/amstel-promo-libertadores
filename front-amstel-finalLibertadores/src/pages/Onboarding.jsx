@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import "./Onboarding.css";
 import { useNavigate } from "react-router-dom";
+import TextoR from "../components/TextoR";
 const Onboarding = () => {
   const navigate = useNavigate();
 
@@ -65,6 +66,7 @@ const Onboarding = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
         />
+        <TextoR/>
       </div>
     </>
   );

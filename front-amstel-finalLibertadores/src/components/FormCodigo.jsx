@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Formik } from "formik";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import FlechaRoja from "../assets/imagenes/flecha_blanca.svg";
+import FlechaRoja from "../assets/imagenes/flecha_roja.svg";
+import FlechaBlanca from "../assets/imagenes/flecha_blanca.svg";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
 import Loader from "./Loader";
@@ -14,6 +15,8 @@ const FormCodigo = ({ data }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [textModal, setTexModal] = useState("");
   const [loading, setLoading] = useState(false);
+  const windowWidth = window.innerWidth;
+  const widthBreackPoint = 750;
 
   const buttonPress = (values) => {
     setLoading(true);
@@ -27,9 +30,8 @@ const FormCodigo = ({ data }) => {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow",
       };
-      fetch("http://apirestamstel.test/api/user", requestOptions)
+      fetch("https://api.desarrollo.viajaconamstel.com/api/user", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           const codigo = data.codigo;
@@ -54,7 +56,11 @@ const FormCodigo = ({ data }) => {
             setLoading(false);
           }
         })
-        .catch((error) => console.log("error en la api", error));
+        .catch((error) => [
+          openModal(),
+          setTexModal("Error en el servidor - vuelva intentarlo", error),
+          setLoading(false),
+        ]);
     } else {
       openModal();
       setTexModal("Ingrese su código");
@@ -155,7 +161,12 @@ const FormCodigo = ({ data }) => {
               ) : (
                 <>
                   Enviar
-                  <img className="flechaRoja" src={FlechaRoja} />
+                  <img
+                    className="flechaRoja"
+                    src={
+                      windowWidth < widthBreackPoint ? FlechaRoja : FlechaBlanca
+                    }
+                  />
                 </>
               )}
             </motion.button>

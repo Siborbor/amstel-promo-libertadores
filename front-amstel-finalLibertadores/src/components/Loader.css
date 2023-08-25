@@ -35,3 +35,9 @@
      stroke-dashoffset: -125px;
     }
    }
+
+@media (max-width: 750px){
+    .loader circle{
+        stroke:#eb1c24
+    }
+}

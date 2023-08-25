@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import FlechaRoja from "../assets/imagenes/flecha-roja.jpg";
 import { motion } from "framer-motion";
+import Flechablanca from "../assets/imagenes/flecha_blanca.svg";
+import cantonesEcuador from "../data/Ciudades";
 
 const FormUser = ({ fechaNacimiento }) => {
   const navigate = useNavigate();
@@ -158,20 +160,28 @@ const FormUser = ({ fechaNacimiento }) => {
             <p className="errormensaje">
               {errors.email && touched.email && errors.email}
             </p>
-            <motion.input
-              type="text"
+            <motion.select
               name="ciudad"
               onChange={handleChange}
-              onBlur={handleBlur}
               value={values.ciudad}
-              placeholder="CIUDAD"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5 }}
-            />
+            >
+              <option value="" disabled selected>
+                Ciudad...
+              </option>
+              {cantonesEcuador.map((canton) => (
+                <option key={canton} value={canton}>
+                  {canton}
+                </option>
+              ))}
+            </motion.select>
+
             <p className="errormensaje">
               {errors.ciudad && touched.ciudad && errors.ciudad}
             </p>
+
             <motion.input
               type="text"
               name="usuarioInstagram"
@@ -250,6 +260,17 @@ const FormUser = ({ fechaNacimiento }) => {
               onClick={() => console.log(fechaNacimiento)}
             >
               SIGUIENTE <img src={FlechaRoja} className="flechaRoja" />
+            </motion.button>
+            <motion.button
+              type="submit"
+              disabled={isSubmitting}
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className="botonSiguienteMobile"
+              onClick={() => console.log(fechaNacimiento)}
+            >
+              SIGUIENTE <img src={Flechablanca} className="flechaRoja" />
             </motion.button>
           </form>
         )}

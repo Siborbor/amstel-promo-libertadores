@@ -19,3 +19,22 @@ background-color: #D60000;
   transition: 300ms;
   padding: 12px 30px;
   }
+  .TextoR{
+    width: 10px !important;
+    top:10px
+  }
+  @media (max-width: 750px){
+    .codigoRegistrado img{
+      width: 230px;
+    }
+    .boton_subir_otro_codigo{
+      background-color: white;
+      margin: 20px auto;
+        color:  #D60000;
+        font-size: 18px;
+      }
+      .TextoR{
+        width: 8px !important;
+        top:10px
+      }
+  }

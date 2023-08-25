@@ -7,6 +7,7 @@ import BotonSiguiente from "../components/BotonSiguiente";
 import { useState } from "react";
 import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
+import TextoR from "../components/TextoR";
 
 const customStyles = {
   content: {
@@ -126,6 +127,7 @@ const StepOne = () => {
             </button>
           </div>
         </Modal>
+        <TextoR/>
       </div>
     </>
   );
